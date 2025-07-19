@@ -1,23 +1,15 @@
-function mostrarContenido(ramo) {
-  let mensaje = "";
+document.addEventListener('DOMContentLoaded', function () {
+  const ramos = document.querySelectorAll('.ramo');
+  const infoBox = document.getElementById('info-box');
 
-  switch (ramo) {
-    case 'anatomia':
-      mensaje = "Anatomía: estructura del cuerpo humano, sistema óseo, muscular, etc.";
-      break;
-    case 'quimica':
-      mensaje = "Química General: compuestos, enlaces, reacciones básicas.";
-      break;
-    case 'bioquimica':
-      mensaje = "Bioquímica: proteínas, enzimas, metabolismo.";
-      break;
-    case 'fisiologia':
-      mensaje = "Fisiología: funciones de órganos y sistemas.";
-      break;
-    default:
-      mensaje = "Ramo no registrado aún.";
-  }
+  ramos.forEach(ramo => {
+    ramo.addEventListener('click', () => {
+      const info = ramo.getAttribute('data-info');
+      infoBox.innerHTML = info;
+      infoBox.classList.add('visible');
+      setTimeout(() => infoBox.classList.remove('visible'), 4000);
+    });
+  });
+});
 
-  alert(mensaje);
-}
 
