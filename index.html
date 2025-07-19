@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Malla Interactiva</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 2rem;
-      background: #f8f9fa;
-    }
-    h1 {
-      color: #4a4a4a;
-    }
-    .caja {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      background: #fff;
-      margin-bottom: 1rem;
-    }
-    .caja:hover {
-      background: #e7f5ff;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <h1>Malla Curricular Interactiva</h1>
-  <div class="caja" onclick="alert('Contenido de Anatomía')">Anatomía</div>
-  <div class="caja" onclick="alert('Contenido de Bioquímica')">Bioquímica</div>
-  <div class="caja" onclick="alert('Contenido de Nutrición Básica')">Nutrición Básica</div>
+  <h1>Malla Curricular</h1>
+  <div id="malla" class="grid-container">
+    <!-- Ejemplo de ramos -->
+    <div class="ramo" data-info="Nombre: Anatomía<br>Semestre: 1">Anatomía</div>
+    <div class="ramo" data-info="Nombre: Bioquímica<br>Semestre: 1">Bioquímica</div>
+    <div class="ramo" data-info="Nombre: Fisiología<br>Semestre: 2">Fisiología</div>
+    <!-- Agrega más ramos aquí -->
+  </div>
+
+  <div id="info-box" class="info-box hidden"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
